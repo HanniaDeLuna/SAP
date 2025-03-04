@@ -1,34 +1,43 @@
-<mvc:View controllerName="com.inv.sapfioriwebinversion.controller.salesforecast.SalesForecast"
+<mvc:View 
+    controllerName="com.inv.sapfioriwebinversion.controller.salesforecast.SalesForecast.controller.js"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:tnt="sap.tnt"
     xmlns:f="sap.f"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m">
 
     <tnt:ToolPage id="IdToolPage1SalesForecast" visible="true">
         
+        <!-- Header -->
         <tnt:header>
-            <f:ShellBar
-                id="IdShellBar1SalesForecast"
+            <f:ShellBar id="IdShellBar1SalesForecast"
                 title="Pronóstico de Ventas"
                 homeIcon="./resources/images/logo_sap.png"
                 showMenuButton="true"
                 menuButtonPressed="onMenuButtonPress">
+                
                 <f:profile>
-                    <m:Avatar id="IdAvatar1SalesForecast" initials="UI" press="onAvatarPress" />
+                    <m:Avatar id="IdAvatar1SalesForecast"
+                        initials="UI"
+                        press="onAvatarPress"/>
                 </f:profile>
+
             </f:ShellBar>
         </tnt:header>
 
+        <!-- Side Navigation -->
         <tnt:sideContent>
-            <core:Fragment fragmentName="com.inv.sapfioriwebinversion.view.salesforecast.components.SideNavigation" type="XML" />
+            <core:Fragment fragmentName="com.inv.sapfioriwebinversion.view.salesforecast.components.SideNavigation" type="XML"/>
         </tnt:sideContent>
 
+        <!-- Main Content -->
         <tnt:mainContents>
             <m:Page id="IdPageSalesForecast">
-                <m:Text id="IdText1SalesForecast" text="CONTENIDO DE LA PAGINA PRINCIPAL DEL PRONÓSTICO DE VENTAS" />
+                <m:Text id="IdText1SalesForecast" text="CONTENIDO DE LA PAGINA PRINCIPAL DEL PRONÓSTICO DE VENTAS"/>
             </m:Page>
         </tnt:mainContents>
 
     </tnt:ToolPage>
+
 </mvc:View>

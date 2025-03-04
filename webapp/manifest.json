@@ -14,6 +14,12 @@
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.5",
             "toolsId": "7a9d7b5d-5adc-47b8-9ec5-f50ce2dd071a"
+        },
+        "dataSources": {
+            "salesForecast": {
+                "uri": "resources/salesforecast.json",
+                "type": "JSON"
+            }
         }
     },
     "sap.ui": {
@@ -43,10 +49,6 @@
                 "sap.f": {}
             }
         },
-        "contentDensities": {
-            "compact": true,
-            "cozy": true
-        },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
@@ -54,17 +56,9 @@
                     "bundleName": "com.inv.sapfioriwebinversion.i18n.i18n"
                 }
             },
-            "dataModel": {
-                "type": "sap.ui.model.json.JSONModel",
-                "settings": {
-                    "dataSource": "salesForecast"
-                }
-            },
-            "dataSources": {
-                "salesForecast": {
-                    "uri": "resources/salesforecast.json",
-                    "type": "JSON"
-                }
+            "salesForecastModel": {
+                "dataSource": "salesForecast",
+                "type": "sap.ui.model.json.JSONModel"
             }
         },
         "resources": {
@@ -109,14 +103,11 @@
                     "name": "Main"
                 },
                 "TargetSalesForecast": {
-                    "id": "SalesForecast",
-                    "name": "SalesForecast",
-                    "viewName": "salesforecast.SalesForecast",
+                    "viewId": "SalesForecast",
+                    "viewName": "com.inv.sapfioriwebinversion.view.salesforecast.SalesForecast",
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewLevel": 3,
-                    "path": "com.inv.sapfioriwebinversion.view.salesforecast",
                     "viewPath": "com.inv.sapfioriwebinversion.view.salesforecast"
                 }
             }
