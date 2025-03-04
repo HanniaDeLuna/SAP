@@ -1,33 +1,31 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/routing/History",
-    "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/thirdparty/jquery",
-    "sap/base/Log",
-    "sap/ui/util/Storage"
+    "sap/ui/core/routing/History", // for routes in app
+    "sap/ui/core/UIComponent",     // UI get routes  
+    "sap/ui/model/json/JSONModel", // create a model 
+    "sap/ui/thirdparty/jquery",    // jquery for querys
+    "sap/base/Log",                // log  
+    "sap/ui/util/Storage"          // to access of the storage 
 ], function (Controller, History, UIComponent, JSONModel, jQuery, Log, Storage) {
-    "use strict";
+    `use strict`;
 
-    return Controller.extend("com.inv.sapfioriwebinversion.controller.BaseController", {
+    const urlBase = "https://inv.dnsalias.com:9101";
+    
+    return Controller.extend("com.inv.sapfiroriwebinversion.controller.BaseController", {
 
-        onInit: function () { 
-            console.log("BaseController cargado");
-        },
+        onInit: function () { }, //this ecxecute only first time
+        getRouter: function () { return UIComponent.getRouterFor(this)},
+        onNavBack: function () { let oHistory, sPreviousHash;
 
-        getRouter: function () {
-            return UIComponent.getRouterFor(this);
-        },
-
-        onNavBack: function () {
-            let oHistory = History.getInstance();
-            let sPreviousHash = oHistory.getPreviousHash();
+            oHistory = History.getInstance();
+            sPreviousHash = oHistory.getPreviousHash();
 
             if (sPreviousHash !== undefined) {
                 window.history.go(-1);
             } else {
-                this.getRouter().navTo("RouteMain", {}, true);
+                this.getRouter().navTo("RouteLogin", {}, true /*no history*/);
             }
-        }
+        
+        },
     });
 });

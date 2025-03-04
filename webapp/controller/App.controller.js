@@ -3,7 +3,7 @@ sap.ui.define([
 ], (BaseController) => {
   "use strict";
 
-  return BaseController.extend("com.inv.sapfioriwebinversion.controller.App", {
+  return BaseController.extend("com.inv.sapfiroriwebinversion.controller.App", {
       onInit() {
       }
   });

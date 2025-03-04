@@ -1,25 +1,25 @@
 {
     "_version": "1.65.0",
     "sap.app": {
-        "id": "com.inv.sapfioriwebinversion",
+        "id": "com.inv.sapfiroriwebinversion",
         "type": "application",
-        "i18n": "i18n/i18n.properties",
+        "i18n": {
+            "bundleName": "com.inv.sapfiroriwebinversion.i18n.i18n",
+            "fallbackLocale": "es_MX",
+            "supportedLocales": [
+            "es_MX"
+            ]
+        },  
         "applicationVersion": {
-            "version": "0.0.1"
+        "version": "1.0.1"
         },
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
-            "version": "1.16.5",
-            "toolsId": "7a9d7b5d-5adc-47b8-9ec5-f50ce2dd071a"
-        },
-        "dataSources": {
-            "salesForecast": {
-                "uri": "resources/salesforecast.json",
-                "type": "JSON"
-            }
+            "version": "1.16.4",
+            "toolsId": "cc52223c-0384-4871-a654-19bb1ec85476"
         }
     },
     "sap.ui": {
@@ -41,24 +41,29 @@
     "sap.ui5": {
         "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.130.6",
+            "minUI5Version": "1.132.1",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.tnt": {},
                 "sap.f": {}
             }
+       },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.inv.sapfioriwebinversion.i18n.i18n"
+                "async": true,
+                "bundleName": "com.inv.sapfiroriwebinversion.i18n.i18n",
+                "fallbackLocale": "es_MX",
+                "supportedLocales": [
+                    "es_MX"
+                ]
                 }
-            },
-            "salesForecastModel": {
-                "dataSource": "salesForecast",
-                "type": "sap.ui.model.json.JSONModel"
             }
         },
         "resources": {
@@ -76,25 +81,22 @@
                 "transition": "slide",
                 "type": "View",
                 "viewType": "XML",
-                "path": "com.inv.sapfioriwebinversion.view",
+                "path": "com.inv.sapfiroriwebinversion.view",
                 "async": true,
-                "viewPath": "com.inv.sapfioriwebinversion.view"
+                "viewPath": "com.inv.sapfiroriwebinversion.view"
             },
             "routes": [
                 {
                     "name": "RouteMain",
                     "pattern": "home",
-                    "target": ["TargetMain"]
+                    "target": [
+                        "TargetMain"
+                    ]
                 },
                 {
-                    "name": "RouteSalesForecast",
-                    "pattern": "salesforecast",
+                    "name":"RouteSalesForecast",
+                    "pattern":"salesforecast",
                     "target": ["TargetSalesForecast"]
-                },
-                {
-                    "name": "RouteLogin",
-                    "pattern": "login",
-                    "target": ["TargetLogin"]
                 }
             ],
             "targets": {
@@ -102,18 +104,20 @@
                     "id": "Main",
                     "name": "Main"
                 },
-                "TargetSalesForecast": {
+                "TargetSalesForecast":{
                     "viewId": "SalesForecast",
-                    "viewName": "com.inv.sapfioriwebinversion.view.salesforecast.SalesForecast",
+                    "viewName": "SalesForecast",
                     "viewType": "XML",
-                    "transition": "slide",
+                    "transition":"slide",
                     "clearControlAggregation": false,
-                    "viewPath": "com.inv.sapfioriwebinversion.view.salesforecast"
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.salesforecast",
+      "viewPath": "com.inv.sapfiroriwebinversion.view.salesforecast"
                 }
             }
         },
         "rootView": {
-            "viewName": "com.inv.sapfioriwebinversion.view.App",
+            "viewName": "com.inv.sapfiroriwebinversion.view.App",
             "type": "XML",
             "id": "App"
         }

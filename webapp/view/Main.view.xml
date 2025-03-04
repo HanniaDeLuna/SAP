@@ -1,37 +1,15 @@
-<mvc:View controllerName="com.inv.sapfioriwebinversion.controller.Main"
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-
-    <Page id="page" title="{i18n>title}">
-        <content>
-            <Table id="IdTable1SalesForecastMainTable"
-                items="{data>/dataRes}">
-                <columns>
-                    <Column>
-                        <Text text="Región"/>
-                    </Column>
-                    <Column>
-                        <Text text="Pronóstico"/>
-                    </Column>
-                    <Column>
-                        <Text text="Ventas"/>
-                    </Column>
-                    <Column>
-                        <Text text="Diferencia"/>
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem>
-                        <cells>
-                            <Text text="{data>region}"/>
-                            <Text text="{data>forecast}"/>
-                            <Text text="{data>sales}"/>
-                            <Text text="{data>difference}"/>
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </content>
-    </Page>
-
+    xmlns:m="sap.m"
+>
+    <m:Page
+        id="IdPageMain"
+        title="{i18n>title}"
+    >
+        <m:Text
+            id="IdTextMain"
+            text="MI PAGINA DE INICIO (PRINCIPAL)"
+        />
+    </m:Page>
 </mvc:View>

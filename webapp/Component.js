@@ -1,10 +1,10 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "com/inv/sapfioriwebinversion/model/models"
+    "com/inv/sapfiroriwebinversion/model/models"
 ], (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("com.inv.sapfioriwebinversion.Component", {
+    return UIComponent.extend("com.inv.sapfiroriwebinversion.Component", {
         metadata: {
             manifest: "json",
             interfaces: [
